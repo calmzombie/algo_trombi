@@ -1,38 +1,38 @@
 var img = [];
-var ImageHover;
+var value = 0;
 
 function preload() {
-	img[0]=loadImage("1.jpg");
-	img[1]=loadImage("2.jpg");
-	img[2]=loadImage("3.jpg");
-	img[3]=loadImage("4.jpg");
-	img[4]=loadImage("5.jpg");
-	img[5]=loadImage("6.jpg");
-	img[6]=loadImage("7.jpg");
-	img[7]=loadImage("8.jpg");
-	img[8]=loadImage("9.jpg");
-	img[9]=loadImage("10.jpg");
-	img[10]=loadImage("11.jpg");
-	img[11]=loadImage("12.jpg");
-	img[12]=loadImage("13.jpg");
-	img[13]=loadImage("14.jpg");
-	img[14]=loadImage("15.jpg");
-	img[15]=loadImage("16.jpg");
-	img[16]=loadImage("17.jpg");
-	img[17]=loadImage("18.jpg");
-	img[18]=loadImage("19.jpg");
-	img[19]=loadImage("20.jpg");
-	img[20]=loadImage("21.jpg");
-	img[21]=loadImage("22.jpg");
-	img[22]=loadImage("23.jpg");
+	img[0]=loadImage("images/1.jpg");
+	img[1]=loadImage("images/2.jpg");
+	img[2]=loadImage("images/3.jpg");
+	img[3]=loadImage("images/4.jpg");
+	img[4]=loadImage("images/5.jpg");
+	img[5]=loadImage("images/6.jpg");
+	img[6]=loadImage("images/7.jpg");
+	img[7]=loadImage("images/8.jpg");
+	img[8]=loadImage("images/9.jpg");
+	img[9]=loadImage("images/10.jpg");
+	img[10]=loadImage("images/11.jpg");
+	img[11]=loadImage("images/12.jpg");
+	img[12]=loadImage("images/13.jpg");
+	img[13]=loadImage("images/14.jpg");
+	img[14]=loadImage("images/15.jpg");
+	img[15]=loadImage("images/16.jpg");
+	img[16]=loadImage("images/17.jpg");
+	img[17]=loadImage("images/18.jpg");
+	img[18]=loadImage("images/19.jpg");
+	img[19]=loadImage("images/20.jpg");
+	img[20]=loadImage("images/21.jpg");
+	img[21]=loadImage("images/22.jpg");
+	img[22]=loadImage("images/23.jpg");
 }
 
 function setup() {
   createCanvas(960,640);
-	img.mouseOver(ImageHover);
 }
 
 function draw() {
+fill (value);
 image(img[0], 0, 0, 160,160);
 image(img[1], 160, 0, 160,160);
 image(img[2], 320, 0, 160,160);
@@ -56,9 +56,12 @@ image(img[22], 160, 480, 160,160);
 image(img[6], 320, 480, 160,160);
 image(img[13], 480, 480, 160,160);
 image(img[20], 640, 480, 160,160);
-
-function ImageHover() {
-	image(img[0],0,0,360,360);
 }
 
+function mousePressed() {
+	if (value === 0){
+		value = 255;
+	} else {
+		value = 0;
+	}
 }
