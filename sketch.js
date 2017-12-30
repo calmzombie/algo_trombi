@@ -1,7 +1,9 @@
 var img = [];
-var value = 0;
 
 function preload() {
+	soundFormats('mp3', 'ogg');
+	mySound = loadSound('music.mp3');
+
 	img[0]=loadImage("images/1.jpg");
 	img[1]=loadImage("images/2.jpg");
 	img[2]=loadImage("images/3.jpg");
@@ -29,10 +31,15 @@ function preload() {
 
 function setup() {
   createCanvas(960,640);
+	mySound.setVolume(0.1);
+	mySound.loop();
+
+	function mouseOver(){
+		filter(BLUR, 6);
+	}
 }
 
 function draw() {
-fill (value);
 image(img[0], 0, 0, 160,160);
 image(img[1], 160, 0, 160,160);
 image(img[2], 320, 0, 160,160);
@@ -56,12 +63,4 @@ image(img[22], 160, 480, 160,160);
 image(img[6], 320, 480, 160,160);
 image(img[13], 480, 480, 160,160);
 image(img[20], 640, 480, 160,160);
-}
-
-function mousePressed() {
-	if (value === 0){
-		value = 255;
-	} else {
-		value = 0;
-	}
 }
