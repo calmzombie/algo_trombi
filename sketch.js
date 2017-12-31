@@ -1,9 +1,17 @@
 var img = [];
+var logo;
 
 function preload() {
+/*load the music*/
 	soundFormats('mp3', 'ogg');
 	mySound = loadSound('music.mp3');
 
+/* load the images */
+
+/*logo esd*/
+	logo = loadImage("images/logoESD.png");
+
+/*students images*/
 	img[0]=loadImage("images/1.jpg");
 	img[1]=loadImage("images/2.jpg");
 	img[2]=loadImage("images/3.jpg");
@@ -31,15 +39,21 @@ function preload() {
 
 function setup() {
   createCanvas(960,640);
+/*set the music*/
 	mySound.setVolume(0.1);
 	mySound.loop();
 
+/**
+ * blur the images when mouse over it (doesn't work)
+ */
 	function mouseOver(){
 		filter(BLUR, 6);
 	}
 }
 
 function draw() {
+
+/*display the images*/
 image(img[0], 0, 0, 160,160);
 image(img[1], 160, 0, 160,160);
 image(img[2], 320, 0, 160,160);
@@ -63,4 +77,5 @@ image(img[22], 160, 480, 160,160);
 image(img[6], 320, 480, 160,160);
 image(img[13], 480, 480, 160,160);
 image(img[20], 640, 480, 160,160);
+image(logo, 810,490,140,140);
 }

@@ -4,3 +4,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+#esd_load {
+  height:620px;
+  width: 960px;
+  overflow: hidden;
+}
